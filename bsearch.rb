@@ -67,7 +67,7 @@ start = Time.now.to_f
 
 #Генерируем тестовые данные
 humans = []
-1000_000.times do |i|
+10_000_000.times do |i|
   random = Random.new()
   humans << 
   {
