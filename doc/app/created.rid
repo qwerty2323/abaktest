@@ -1,0 +1,6 @@
+Tue, 22 Nov 2016 04:57:17 +0500
+doc/README_FOR_APP	Mon, 21 Nov 2016 05:20:04 +0500
+app/controllers/application_controller.rb	Mon, 21 Nov 2016 05:20:04 +0500
+app/controllers/pages_controller.rb	Tue, 22 Nov 2016 04:52:20 +0500
+app/helpers/application_helper.rb	Mon, 21 Nov 2016 05:20:04 +0500
+app/models/pages.rb	Tue, 22 Nov 2016 04:00:32 +0500

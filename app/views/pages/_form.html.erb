@@ -1,0 +1,35 @@
+<%= form_for(@page, url: create_page_path({:pages => params[:pages]})) do |f| %>
+  <div class="child-pages">
+    <h4>Child pages:</h4>
+    <%= render( partial: 'child_pages', locals: { pages:  Page.where('parent = ?', @page.name) }) if Page.where('parent = ?', @page.name) %>
+    <hr>
+  </div>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div> 
+    <div class="field">
+      <%= f.label :content %>
+      <br>
+      <%= f.text_area :content %>
+    </div>
+    <%= f.submit %>
+  </div>
+<% end %>

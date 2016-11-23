@@ -1,0 +1,11 @@
+<% pages.each do |page| %>
+  <div style="padding-left: 0.5em; margin-bottom: 0.1em;">
+    = <%= page.id %> <%= link_to(page.title, show_page_path({ pages: generate_path(page) })) %>
+      | <%= link_to('Edit', update_page_path({ pages: generate_path(page) })) %>
+      | <%= link_to('New child', create_page_path({ pages: generate_path(page) })) %>
+    | <%= link_to('Delete', delete_page_path({ pages: generate_path(page) }), :method => :delete) %>
+    <br>
+    <%= render( partial: 'child_pages', locals: { pages:  Page.where('parent = ?', generate_path(page)) }) if Page.where('parent = ?', generate_path(page)) %>
+  </div>
+<% end %>
+

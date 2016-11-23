@@ -1,0 +1,6 @@
+<h1>Pages list</h1>
+
+<%= link_to('Create root page', create_page_path) %>
+<div class="pages-tree">
+    <%= render( partial: 'child_pages', locals: { pages: Page.where('parent = ""') }) %>
+</div>
